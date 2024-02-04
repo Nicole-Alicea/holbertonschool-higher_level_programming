@@ -23,6 +23,6 @@ class Square:
 
     def my_print(self):
         if size == 0:
-            print("")
+            print("--")
         else:
             print(area)
