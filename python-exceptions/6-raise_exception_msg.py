@@ -1,3 +1,6 @@
 #!/usr/bin/python3
 def raise_exception_msg(message=""):
-    raise NameError("This is a custom name exception")
+    try:
+        undefined_variable
+    except NameError as e:
+        raise NameError(f"{message}: {e}")
