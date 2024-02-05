@@ -1,78 +1,67 @@
-# Import module for function say_my_name, usage on Test cases
->>> say_my_name = __import__('3-say_my_name').say_my_name
+===========================
+How to Use 3-say_my_name.py
+===========================
 
-# Test case 1: basic usage of function
->>> say_my_name("John", "Smith")
-My name is John Smith
+This modules defines a function ``say_my_name(first_name, last_name="")``.
 
-# Test case 2: basic usage with different name
->>> say_my_name("Walter", "White")
-My name is Walter White
+Usage
+=====
 
-# Test case 3: usage without last name
->>> say_my_name("Bob")
-My name is Bob 
+``say_my_name(...)`` prints "My name is <first_name> <last_name>".
 
-# Test case 4: Usage with name not been a str
->>> say_my_name(12, "Herrera")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
+::
 
-# Test case 5: name been None
->>> say_my_name(None, "Mendez")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Beta", "Scribbles")
+    My name is Beta Scribbles
 
-# Test case 6: last_name been none
->>> say_my_name("William", None)
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
+::
 
-# Test case 7: last name is not a string
->>> say_my_name("William", 12)
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
+    >>> say_my_name("Tom Jerry", "Avril")
+    My name is Tom Jerry Avril
 
-# Test case 8: first_name list of strings
->>> say_my_name(["Hello", "World"], "<- what happen there")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
+The parameter ```last_name``` is optional. If no last name is provided,
+an empty string is printed instead.
 
-# Test case 9: last_name is a list of strings
->>> say_my_name("what happen there ->", ["Hello", "world"])
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
+::
 
-# Test case 10: both args are empty strings
->>> say_my_name("", "")
-My name is  
+    >>> say_my_name("Beta")
+    My name is Beta 
 
-# Test case 11: long strings as arguments for funciton
->>> say_my_name("Just a long name for function testing", "Just a long string for last name for function testing")
-My name is Just a long name for function testing Just a long string for last name for function testing
+Invalid Names
+=============
 
-# Test case 12: newlines as first arg
->>> say_my_name("\n\n", "Are there newlines?")
-My name is 
-<BLANKLINE>
- Are there newlines?
+The parameters ``first_name`` and ``last_name``` must be strings. Otherwise,
+a TypeError is raised.
 
-# Test case 13: abstract string for name
->>> say_my_name("ha83-!83hjp", "Snow")
-My name is ha83-!83hjp Snow
+::
 
-# Test case 14: strings with whitlines in them
->>> say_my_name("   William   ", " He rr e ra")
-My name is    William     He rr e ra
+    >>> say_my_name(6, "James")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
 
-# Test case 15: function with no arguments
->>> say_my_name()
-Traceback (most recent call last):
-    ...
-TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+::
+
+    >>> say_my_name("LeBron", ["Cavs", "Lakers", "Heat"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+::
+
+    >>> say_my_name({"LeBron": 6, "James": 23}, 7.7)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+At least one name must be provided.
+
+::
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
