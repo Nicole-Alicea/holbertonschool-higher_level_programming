@@ -75,3 +75,31 @@ Test float overflow:
     	Traceback (most recent call last):
     	...
     	OverflowError: cannot convert float infinity to integer
+
+Test first arg invalid:
+
+    	>>> add_integer("foo", 0)
+    	Traceback (most recent call last):
+            ...
+   	TypeError: a must be an integer
+
+Test second arg invalid:
+
+    	>>> add_integer(123123, [])
+    	Traceback (most recent call last):
+            ...
+    	TypeError: b must be an integer
+
+Test both args invalid:
+
+    	>>> add_integer(None, None)
+    	Traceback (most recent call last):
+            ...
+    	TypeError: a must be an integer
+
+Test two strings:
+
+    	>>> add_integer("foo", "bar")
+    	Traceback (most recent call last):
+            ...
+    	TypeError: a must be an integer
