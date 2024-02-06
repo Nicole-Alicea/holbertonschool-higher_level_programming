@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """Creates rectangle, calculates the area and perimeter, prints rectangle"""
+    """Creates rectangle, calculates the area & perimeter, prints rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
