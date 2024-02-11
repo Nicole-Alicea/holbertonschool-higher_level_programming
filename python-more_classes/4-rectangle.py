@@ -42,7 +42,7 @@ class Rectangle:
             return 0
 
     def __str__(self):
-        if self.__width or self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         else:
             rectangle_str = ""
@@ -51,9 +51,4 @@ class Rectangle:
             return rectangle_str[:-1]
 
     def __repr__(self):
-        return
-
-    @classmethod
-    def from_string(cls, string_representation):
-        x, y = eval(string_representation)
-        return cls(x, y)
+        return f"Rectangle({self.__width}, {self.__height})"
