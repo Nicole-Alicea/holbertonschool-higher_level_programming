@@ -2,7 +2,7 @@
 """Creates a class"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """Class with its methods"""
     def area(self):
         raise Exception("area() is not implemented")
