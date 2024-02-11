@@ -3,22 +3,17 @@
     and then save them to a file
 """
 
-from os import path
 import sys
+import os
 
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
-if __name__ == "__main__":
-    argv = sys.argv[1:]
-
-    save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
-    load_from_json_file =
-        __import__("6-load_from_json_file").load_from_json_file
-
-    file_path = "add_item.json"
-    if path.exists(file_path):
-        list_obj = load_from_json_file(file_path)
-    else:
-        list_obj = list()
-    
-    save_to_json_file(list_obj + argv, file_path)
-    print(end="")
+file = "add_item.json"
+list_of_args = list(sys.argv[1:])
+if os.path.exists(file):
+    currentlist = load_from_json_file(file)
+else:
+    currentlist = []
+currentlist += list_of_args
+save_to_json_file(currentlist, file)
