@@ -14,12 +14,14 @@ def isSafe(m_queen, nqueen):
             return False
     return True
 
+
 def print_result(m_queen, nqueen):
     """ Method that prints the list with the Queens positions"""
     res = []
     for i in range(nqueen):
         res.append([i, m_queen[i]])
     print(res)
+
 
 def Queen(m_queen, nqueen):
     """ Recursive function that executes the Backtracking algorithm"""
@@ -29,16 +31,18 @@ def Queen(m_queen, nqueen):
 
     m_queen[nqueen] = -1
 
-    while((m_queen[nqueen] < len(m_queen) - 1)):
+    while ((m_queen[nqueen] < len(m_queen) - 1)):
         m_queen[nqueen] += 1
         if isSafe(m_queen, nqueen) is True:
             if nqueen is not len(m_queen):
                 Queen(m_queen, nqueen + 1)
 
+
 def solveNQueen(size):
     """ Function that invokes the Backtracking algorithm"""
     m_queen = [-1 for i in range(size)]
     Queen(m_queen, 0)
+
 
 if __name__ == '__main__':
 
