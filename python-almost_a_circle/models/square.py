@@ -9,6 +9,10 @@ class Square(Rectangle):
         """Class constructor"""
         super().__init__(size, size, x, y, id)
 
+    def __str__(self):
+        """Returns a string representation of Square"""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+
     @property
     def size(self):
         """gets size"""
@@ -19,11 +23,6 @@ class Square(Rectangle):
         """sets the same value for width and height"""
         self.width = value
         self.height = value
-
-    def __str__(self):
-        """Returns a string representation of Square"""
-        return '[{}] ({}) {}/{} - {}'.\
-            format(type(self).__name__, self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """Assigns arguments to attributes"""
