@@ -14,3 +14,4 @@ class Square(Rectangle):
         """Returns a string representation of Square"""
         s = "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.size)
+        return s
