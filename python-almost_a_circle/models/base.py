@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Creates a class that will be the 'base' of all other classes"""
+import json
 
 
 class Base:
@@ -20,5 +21,5 @@ class Base:
             list_dictionaries
         """
         if list_dictionaries is None or list_dictionaries == []:
-            list_dictionaries = []
+            return "[]"
         return json.dumps(list_dictionaries)
