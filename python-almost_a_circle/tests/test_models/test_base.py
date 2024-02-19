@@ -36,7 +36,7 @@ class TestBase(unittest.TestCase):
         self.assertTrue(Base(200), self.id == 200)
         self.assertTrue(Base(-5), self.id == -5)
         self.assertTrue(Base(91432), self.id == 91432)
-       self.assertTrue(Base(0), self.id == 0)
+        self.assertTrue(Base(0), self.id == 0)
 
     def test_id_is_none(self):
         """Test id is none
@@ -45,7 +45,7 @@ class TestBase(unittest.TestCase):
         self.assertTrue(Base(), self.id == 2)
         self.assertTrue(Base(), self.id == 3)
 
-   def test_1_id(self):
+    def test_1_id(self):
         """After run set of ids"""
         Base._Base__nb_objects = 0
         bas = Base()
