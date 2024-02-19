@@ -61,3 +61,12 @@ class TestRectangleMethods(unittest.TestCase):
         """Test the __str__ method"""
         expected_str = "[Rectangle] (1) 0/0 - 2/4"
         self.assertEqual(str(self.default_rect), expected_str)
+
+    def test_update(self):
+        """Test the update method"""
+        self.default_rect.update(2, 3, 5, 1, 2)
+        self.assertEqual(self.default_rect.id, 2)
+        self.assertEqual(self.default_rect.width, 3)
+        self.assertEqual(self.default_rect.height, 5)
+        self.assertEqual(self.default_rect.x, 1)
+        self.assertEqual(self.default_rect.y, 2)
