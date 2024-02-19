@@ -54,3 +54,6 @@ class TestSquareMethods(unittest.TestCase):
         """Test the to_dictionary method"""
         expected_dict = {'id': 1, 'size': 3, 'x': 0, 'y': 0}
         self.assertEqual(self.default_square.to_dictionary(), expected_dict)
+
+if __name__ == '__main__':
+    unittest.main()
