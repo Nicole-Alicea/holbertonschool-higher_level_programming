@@ -39,3 +39,13 @@ class TestSquareMethods(unittest.TestCase):
         """Test the __str__ method"""
         expected_str = "[Square] (1) 0/0 - 3"
         self.assertEqual(str(self.default_square), expected_str)
+
+    def test_update(self):
+        """Test the update method"""
+        self.default_square.update(2, 4, 1, 2)
+        self.assertEqual(self.default_square.id, 2)
+        self.assertEqual(self.default_square.size, 4)
+        self.assertEqual(self.default_square.width, 4)
+        self.assertEqual(self.default_square.height, 4)
+        self.assertEqual(self.default_square.x, 1)
+        self.assertEqual(self.default_square.y, 2)
