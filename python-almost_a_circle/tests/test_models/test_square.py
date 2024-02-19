@@ -34,3 +34,8 @@ class TestSquareMethods(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             self.default_square.size = "invalid"
+
+    def test_str(self):
+        """Test the __str__ method"""
+        expected_str = "[Square] (1) 0/0 - 3"
+        self.assertEqual(str(self.default_square), expected_str)
