@@ -56,3 +56,23 @@ class TestRectangleMethods(unittest.TestCase):
     def test_area(self):
         """Test the area calculation"""
         self.assertEqual(self.default_rect.area(), 2 * 4)
+
+    def test_display(self):
+        """Test the display method"""
+        # Redirect stdout to capture the printed output
+        import sys
+        from io import StringIO
+        original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+        self.default_rect.display()
+
+        # Reset redirect.
+        sys.stdout = original_stdout
+
+        # Get the printed output
+        printed_output = sys.stdout.getvalue()
+
+        # Assert the printed output is as expected
+        expected_output = "\n\n  ##\n  ##\n  ##\n  ##\n"
+        self.assertEqual(printed_output, expected_output)
