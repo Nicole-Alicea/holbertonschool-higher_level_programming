@@ -52,3 +52,7 @@ class TestRectangleMethods(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             self.default_rect.y = "invalid"
+
+    def test_area(self):
+        """Test the area calculation"""
+        self.assertEqual(self.default_rect.area(), 2 * 4)
