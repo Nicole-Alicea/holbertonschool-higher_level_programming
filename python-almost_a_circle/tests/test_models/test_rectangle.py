@@ -70,3 +70,8 @@ class TestRectangleMethods(unittest.TestCase):
         self.assertEqual(self.default_rect.height, 5)
         self.assertEqual(self.default_rect.x, 1)
         self.assertEqual(self.default_rect.y, 2)
+
+    def test_to_dictionary(self):
+        """Test the to_dictionary method"""
+        expected_dict = {'id': 1, 'width': 2, 'height': 4, 'x': 0, 'y': 0}
+        self.assertEqual(self.default_rect.to_dictionary(), expected_dict)
