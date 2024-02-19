@@ -75,3 +75,6 @@ class TestRectangleMethods(unittest.TestCase):
         """Test the to_dictionary method"""
         expected_dict = {'id': 1, 'width': 2, 'height': 4, 'x': 0, 'y': 0}
         self.assertEqual(self.default_rect.to_dictionary(), expected_dict)
+
+if __name__ == '__main__':
+    unittest.main()
