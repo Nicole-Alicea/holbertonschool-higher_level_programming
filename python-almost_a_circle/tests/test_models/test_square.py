@@ -19,3 +19,18 @@ class TestSquareMethods(unittest.TestCase):
         self.assertEqual(self.default_square.x, 0)
         self.assertEqual(self.default_square.y, 0)
         self.assertEqual(self.default_square.id, 1)
+
+    def test_setters(self):
+        """Test the setter for size"""
+        # Test valid values
+        self.default_square.size = 5
+        self.assertEqual(self.default_square.size, 5)
+        self.assertEqual(self.default_square.width, 5)
+        self.assertEqual(self.default_square.height, 5)
+
+        # Test invalid values
+        with self.assertRaises(ValueError):
+            self.default_square.size = -1
+
+        with self.assertRaises(TypeError):
+            self.default_square.size = "invalid"
