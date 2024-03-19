@@ -38,7 +38,7 @@ def list_states(username, password, database):
             print((state.id, state.name))
 
     except Exception as e:
-        print("MySQL Error:", e)
+        print("Error:", e)
 
     finally:
         if mysql_conn:
@@ -49,7 +49,6 @@ def list_states(username, password, database):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
         sys.exit(1)
 
     username = sys.argv[1]
