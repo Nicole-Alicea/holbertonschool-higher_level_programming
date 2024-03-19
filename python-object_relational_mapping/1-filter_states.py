@@ -10,7 +10,7 @@ from sys import argv
 
 if __name__ == '__main__':
 
-    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          passwd=argv[2], db=argv[3])
     
     cursor = db.cursor()
@@ -21,3 +21,6 @@ if __name__ == '__main__':
     rows = cursor.fetchall()
     for x in rows:
         print(x)
+
+    cursor.close()
+    db.close()
