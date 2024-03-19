@@ -23,12 +23,13 @@ def list_states(username, password, database):
 
     try:
         mysql_conn = MySQLdb.connect(host="localhost",
-                    port=3306, user=username, passwd=password,
-                    db=database)
+                                     port=3306,
+                                     user=username,
+                                     passwd=password,
+                                     db=database)
         
         engine = create_engine(
-            f"mysql://{username}:{password}@localhost:3306/{database}"
-        )
+            f"mysql://{username}:{password}@localhost:3306/{database}")
 
         Session = sessionmaker(bind=engine)
         session = Session()
