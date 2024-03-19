@@ -21,3 +21,4 @@ if __name__ == '__main__':
     # Clean up process
     cursor.close()
     db.close()
+    
