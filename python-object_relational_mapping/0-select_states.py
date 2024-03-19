@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''This script connects to a MySQL database and lists all of the states from the database hbtn_0e_0_usa'''
+'''This script connects to a MySQL database and lists all of the
+    states from the database hbtn_0e_0_usa
+'''
 import MySQLdb
 import sys
 
