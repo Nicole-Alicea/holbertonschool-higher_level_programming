@@ -1,0 +1,1 @@
+This directory is dedicated to the Document Object Model in JavaScript. The DOM is the data representation of the objects that comprise the structure and content of a document on the web. 
